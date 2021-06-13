@@ -1,8 +1,10 @@
 {
   "expoServerNgrokUrl": "https://si-mk4.mitraa.iss-tracker.exp.direct",
   "packagerNgrokUrl": "https://packager.si-mk4.mitraa.iss-tracker.exp.direct",
-  "ngrokPid": 38372,
-  "expoServerPort": 19000,
+  "ngrokPid": 16788,
+  "expoServerPort": null,
   "devToolsPort": 19002,
-  "packagerPort": 19000
+  "packagerPort": 19000,
+  "webpackServerPort": null,
+  "packagerPid": null
 }
