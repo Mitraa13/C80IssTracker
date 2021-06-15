@@ -36,7 +36,7 @@ export default class IssInfoScreen extends Component {
     }
 
     render() {
-        if(Object.keys(this.state.location)===0){
+        if(Object.keys(this.state.location).length===0){
             return(
                 <View style={styles.container}>
                     <Text style={styles.loadingText}>Loading...</Text>
