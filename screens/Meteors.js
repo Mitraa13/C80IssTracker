@@ -66,13 +66,13 @@ export default class MeteorScreen extends Component {
                         source={speed}
                         style={{width:size, height:size, alignSelf:"center"}}
                         />
-                        <View>
-                            <Text style={[styles.cardTitle,{marginTop:400, marginLeft:50}]}>{item.name}</Text>
-                            <Text style={[styles.cardText,{marginTop:20, marginLeft:50}]}>Closest to the Earth- {item.close_approach_data[0].close_approach_date_full}</Text>
-                            <Text style={[styles.cardText,{marginTop:5, marginLeft:50}]}>Minimum diameter- {item.estimated_diameter.kilometers.estimated_diameter_min}</Text>
-                            <Text style={[styles.cardText,{marginTop:5, marginLeft:50}]}>Maximum diameter- {item.estimated_diameter.kilometers.estimated_diameter_max}</Text>
-                            <Text style={[styles.cardText,{marginTop:5, marginLeft:50}]}>Velocity- {item.close_approach_data[0].relative_velocity.kilometers_per_hour}</Text>
-                            <Text style={[styles.cardText,{marginTop:5, marginLeft:50}]}>Missing Earth- {item.close_approach_data[0].miss_distance.kilometers}</Text>
+                        <View style={styles.meteorDataContainer}>
+                            <Text style={[styles.cardTitle,{marginTop:10}]}>{item.name}</Text>
+                            <Text style={[styles.cardText,{marginTop:20}]}>Closest to the Earth- {item.close_approach_data[0].close_approach_date_full}</Text>
+                            <Text style={[styles.cardText,{marginTop:5}]}>Minimum diameter- {item.estimated_diameter.kilometers.estimated_diameter_min}</Text>
+                            <Text style={[styles.cardText,{marginTop:5}]}>Maximum diameter- {item.estimated_diameter.kilometers.estimated_diameter_max}</Text>
+                            <Text style={[styles.cardText,{marginTop:5}]}>Velocity- {item.close_approach_data[0].relative_velocity.kilometers_per_hour}</Text>
+                            <Text style={[styles.cardText,{marginTop:5}]}>Missing Earth- {item.close_approach_data[0].miss_distance.kilometers}</Text>
                         </View>
                     </View>
                 </ImageBackground>
@@ -107,14 +107,15 @@ export default class MeteorScreen extends Component {
             return (
                 <View style={styles.container}>
                     <SafeAreaView style={styles.droidSafeArea} />
-
+                    <View style={styles.titleBar}>
+                        <Text style={styles.titleText}>METEORS</Text>
+                    </View>
                         <FlatList
                             keyExtractor={this.keyExtractor}
                             data={meteor}
                             renderItem={this.renderItem}
                             horizontal={true}
                         />
-
                 </View>
             );
         }
@@ -137,12 +138,16 @@ const styles = StyleSheet.create({
     titleBar: {
         flex: 0.15,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        padding:10,
+        backgroundColor: 'rgba(52, 52, 52, 0.5)',
     },
     titleText: {
         fontSize: 30,
         fontWeight: "bold",
-        color: "white"
+        color: "white",
+        margin:10,
+        padding:10,
     },
     meteorContainer: {
         flex: 0.85
@@ -177,6 +182,11 @@ const styles = StyleSheet.create({
     meteorDataContainer: {
         justifyContent: "center",
         alignItems: "center",
-
+        backgroundColor:"blue",
+        marginTop:150,
+        backgroundColor:"#070C29",
+        borderRadius:20,
+        padding:10,
+        margin:20,
     }
 });

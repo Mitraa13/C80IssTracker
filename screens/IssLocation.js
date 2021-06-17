@@ -105,12 +105,15 @@ const styles = StyleSheet.create({
     titleContainer: {
         flex: 0.1,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        backgroundColor: 'rgba(52, 52, 52, 0.5)',
     },
     titleText: {
         fontSize: 30,
         fontWeight: "bold",
-        color: "white"
+        color: "white",
+        margin:10,
+        padding:20,
     },
     refeshContainer: {
         flex: 0.1,
